@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page-wrapper">
+    <div class="card">
+
+      <h1 class="page-title">Liah Academy</h1>
+      <p class="page-sub">Register for an account.</p>
+
+      <form id="registrationForm">
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="certification">Certification</label>
+          <select id="certification" name="certification" required>
+            <option value="" disabled selected>Select certification</option>
+            <option value="first school leaving certificate">First School Leaving Certificate</option>
+            <option value="gce o-level">GCE O-Level</option>
+            <option value="gce a-level">GCE A-Level</option>
+            <option value="diploma">Diploma</option>
+            <option value="bachelor's degree">Bachelor's Degree</option>
+            <option value="master's degree">Master's Degree</option>
+            <option value="doctorate degree">Doctorate Degree</option>
+            <option value="professional certification">Professional Certification</option>
+            <option value="other">Other</option>
+          </select>
+          <input type="text" id="other" name="other" placeholder="Please specify" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob">
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="Your city or town" required>
+        </div>
+
+        <div class="form-group">
+          <label for="jobtype">Job Type</label>
+          <select id="jobtype" name="jobtype" required>
+            <option value="" disabled selected>Select job type</option>
+            <option value="front-end engineer">Front-end Engineer</option>
+            <option value="back-end engineer">Back-end Engineer</option>
+            <option value="full-stack engineer">Full-stack Engineer</option>
+            <option value="data scientist">Data Scientist</option>
+            <option value="devops engineer">DevOps Engineer</option>
+            <option value="mobile app developer">Mobile App Developer</option>
+            <option value="ui/ux designer">UI/UX Designer</option>
+            <option value="security analyst">Security Analyst</option>
+            <option value="other">Other</option>
+          </select>
+          <input type="text" id="other-jobtype" name="other-jobtype" placeholder="Please specify" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="At least 6 characters" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Register</button>
+
+      </form>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
