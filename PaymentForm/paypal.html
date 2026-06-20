@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayPal Payment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="paypal-page">
+
+  <main class="page-wrapper">
+    <div class="card">
+
+      <a href="payment.html" class="back-link">← Back to payment methods</a>
+
+      <div class="paypal-logo">🅿️</div>
+      <h1 class="page-title">Pay with PayPal</h1>
+      <p class="page-sub">Review the amount below and click the button to continue on PayPal.</p>
+
+      <p class="amount-label">Total Amount</p>
+      <p class="amount-display" id="display-amount">XAF 5,000</p>
+
+      <form onsubmit="handlePaypal(event)">
+        <div class="form-group">
+          <label for="pp-amount">Enter Amount (XAF)</label>
+          <input type="number" id="pp-amount" name="amount" placeholder="e.g. 5000" min="100" oninput="updateAmount(this.value)" required>
+        </div>
+
+        <a id="paypal-link" href="https://paypal.me/liahacademy" target="_blank" class="paypal-btn" onclick="setPaypalAmount()">
+          Continue to PayPal →
+        </a>
+      </form>
+
+      <p class="notice">You will be taken to PayPal to confirm and complete this payment securely.</p>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

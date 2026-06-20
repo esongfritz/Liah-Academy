@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Money Payment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="momo-page">
+
+  <main class="page-wrapper">
+    <div class="card">
+
+      <a href="payment.html" class="back-link">← Back to payment methods</a>
+
+      <h1 class="page-title">Mobile Money</h1>
+      <p class="page-sub">Choose how you want to pay.</p>
+
+      <div class="option-toggle">
+        <button class="toggle-btn active" id="btn-api" onclick="showSection('api')">Pay via App</button>
+        <button class="toggle-btn" id="btn-ussd" onclick="showSection('ussd')">Pay via USSD</button>
+      </div>
+
+      <!-- API OPTION -->
+      <section id="section-api">
+        <form onsubmit="handleApiPayment(event)">
+          <div class="form-group">
+            <label for="api-phone">Phone Number</label>
+            <input type="tel" id="api-phone" name="phone" placeholder="e.g. 671234567" required>
+          </div>
+
+          <div class="form-group">
+            <label for="api-network">Network</label>
+            <select id="api-network" name="network" required>
+              <option value="" disabled selected>Select network</option>
+              <option value="mtn">MTN Mobile Money</option>
+              <option value="orange">Orange Money</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="api-amount">Amount (XAF)</label>
+            <input type="number" id="api-amount" name="amount" placeholder="e.g. 5000" min="100" required>
+          </div>
+
+          <button type="submit" class="btn-submit">Request Payment</button>
+        </form>
+
+        <p class="notice">A payment request will be sent to your phone. Open your MoMo app and confirm to complete the transaction.</p>
+      </section>
+
+      <!-- USSD OPTION -->
+      <section id="section-ussd" class="hidden">
+        <form onsubmit="handleUssdPayment(event)">
+          <div class="form-group">
+            <label for="ussd-phone">Phone Number</label>
+            <input type="tel" id="ussd-phone" name="phone" placeholder="e.g. 671234567" required>
+          </div>
+
+          <div class="form-group">
+            <label for="ussd-amount">Amount (XAF)</label>
+            <input type="number" id="ussd-amount" name="amount" placeholder="e.g. 5000" min="100" required>
+          </div>
+
+          <button type="submit" class="btn-submit">Dial and Pay</button>
+        </form>
+
+        <p class="notice">This will dial *126*16*our number*amount# on your phone. You will confirm the payment manually using your MoMo PIN.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
